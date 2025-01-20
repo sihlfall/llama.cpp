@@ -1,3 +1,11 @@
+Compile with ROCm 6.3.1
+
+```
+HIPCXX="/opt/rocm-6.3.1/bin/amdclang" HIP_PATH="$(hipconfig -R)" CMAKE_PREFIX_PATH=/opt/rocm-6.3.1/lib/cmake   cmake -S . -B build -DGGML_HIP=ON -DAMDGPU_TARGETS=gfx1030 -DCMAKE_BUILD_TYPE=Release
+
+cmake --build build --config Release -- -j 16
+```
+
 # llama.cpp
 
 ![llama](https://user-images.githubusercontent.com/1991296/230134379-7181e485-c521-4d23-a0d6-f7b3b61ba524.png)
